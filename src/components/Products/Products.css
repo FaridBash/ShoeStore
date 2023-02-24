@@ -1,0 +1,17 @@
+
+
+
+#products-page{
+    width: 100vw;
+    height: 100vh;
+    /* background: green; */
+}
+
+#show-items{
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 1rem;
+}

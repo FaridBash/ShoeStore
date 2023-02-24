@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, useNavigate } from "react-router-dom";
 import reactLogo from "./assets/react.svg";
 import Header from "./components/Header/Header";
 import Home from "./components/HomePage/Home";
+import ProductsPage from "./components/Products/Products";
 import "./App.css";
+
 
 const route = createBrowserRouter([
   {
@@ -14,6 +16,10 @@ const route = createBrowserRouter([
         path: "home",
         element: <Home/>,
       },
+      {
+        path:"Shoes",
+        element: <ProductsPage/>
+      }
       // {
       //   path: "Products",
       //   element: <Products />,
@@ -31,30 +37,7 @@ const route = createBrowserRouter([
 ]);
 
 function App() {
-  const url = "https://63f749eae40e087c958b57f1.mockapi.io/shoestore";
-  const [itemsFromDb, setItemsFromDb] = useState([]);
-
-  useEffect(() => {
-    // console.log(itemsFromDb);
-  }, [itemsFromDb]);
-  async function fetchItemsHandler() {
-    try {
-      fetch(url)
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => {
-          setItemsFromDb(data);
-          console.log(data);
-        });
-
-      // const fetched= await fetch(url);
-      // const data= await fetched.json();
-      // setItemsFromDb(data);
-      // console.log(itemsFromDb);
-    } catch (error) {}
-  }
-
+  
   return (
     <div className="App">
       <RouterProvider router={route}/>

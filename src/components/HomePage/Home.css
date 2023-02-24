@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Norican&display=swap');
 
 #home-page{
     width: 80%;
@@ -7,9 +7,31 @@
     flex-direction: column;
 }
 
+#home-page span{
+    color: orange;
+}
+
+#my{
+    font-family: 'Norican', cursive;
+    writing-mode:vertical-lr;
+    font-size: 15px;
+    margin-right: -0.4rem;
+}
+
 #home-container{
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+#h1-home{
+    margin-bottom: -1rem;
+    font-family: 'Norican', cursive;
+}
+
+#h2-home{
+    margin-bottom: 3rem;
+    font-family: 'Norican', cursive;
+    font-size: 30px;
 }

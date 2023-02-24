@@ -1,12 +1,13 @@
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate  } from 'react-router-dom'
 import './Catagory.css'
 
-export default function Catagory(){
-
+export default function Catagory(props){
+    const navigate=useNavigate();
 
     return <div id="catagory-container">
-        <h1>Shoes</h1>
-        <Link>Manage Items</Link>
+        <img src={props.url} alt="" id='cata-img'/>
+        <p>{props.title}</p>
+        <Link to={(`/${props.title}`)} state={props.pass} >Manage Items</Link>
     </div>
 }
