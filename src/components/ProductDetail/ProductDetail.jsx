@@ -1,17 +1,37 @@
 import './ProductDetail.css'
 import { useParams } from 'react-router-dom'
 import { useLocation } from 'react-router-dom';
-
-
-export default function ProductDetail(){
+import { url } from '../HomePage/Home';
+import { useNavigate } from "react-router-dom";
+export default function ProductDetail(props){
     const params=useParams();
     const location = useLocation();
+    const navigate = useNavigate();
     const state = location.state;
     console.log(state);
+    console.log("PARAMS: ", params.id);
+
+    async function deleteHandler(itemId){
+        try {
+            fetch(`${url}/${itemId}`, {
+            method: 'DELETE',
+            })
+        .then(res => res.json()) // or res.json()
+        .then(res => console.log("res",res))
+    
+            console.log("delete clicked");
+            console.log("state after delete:", state );
+            // navigate(-1);
+        } catch (error) {
+            
+        }
+        }
+    
+
     return <div id='detail-container'>
                 <h1>Product Detail</h1>
             <div id='del-edit-btns'>
-                <button>Remove Item</button>
+                <button onClick={()=>{deleteHandler(params.id); navigate(-1)}}>Remove Item</button>
                 <button>Edit Item</button>
             </div>
             <h2>{state.name}</h2>

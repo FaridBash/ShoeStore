@@ -2,7 +2,7 @@
 
 #product-container{
     width: 200px;
-    height: 250px;
+    height: fit-content;
     border-radius: 10px;
     padding: 0.5rem;
     text-align: left;
