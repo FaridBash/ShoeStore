@@ -11,12 +11,12 @@
 }
 
 #show-items{
-    width: 100%;
+    width: 68%;
     display: flex;
     flex-wrap:wrap;
     align-items: center;
     justify-content: space-around;
-    margin: 0 1rem;
+    /* margin: 0 1rem; */
 }
 
 #products-header{
