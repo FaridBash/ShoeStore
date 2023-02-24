@@ -4,6 +4,7 @@ import reactLogo from "./assets/react.svg";
 import Header from "./components/Header/Header";
 import Home from "./components/HomePage/Home";
 import ProductsPage from "./components/Products/Products";
+import ProductDetail from "./components/ProductDetail/ProductDetail";
 import "./App.css";
 
 
@@ -13,27 +14,23 @@ const route = createBrowserRouter([
     element: <Header />,
     children: [
       {
-        path: "home",
+        path: "",
         element: <Home/>,
       },
       {
         path:"Shoes",
         element: <ProductsPage/>
+      },
+      {
+        path:'Shoes/:id',
+        element:<ProductDetail/>
       }
-      // {
-      //   path: "Products",
-      //   element: <Products />,
-      // },
-      // {
-      //   path: "/Products/:id",
-      //   element: <ProductDetail />,
-      // },
     ],
   },
-  {
-    path:'/home1',
-    element: <Home/>
-  }
+  // {
+  //   path:'/home1',
+  //   element: <Home/>
+  // }
 ]);
 
 function App() {

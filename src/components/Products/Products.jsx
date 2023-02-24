@@ -9,11 +9,15 @@ export default function ProductsPage(props){
 
 
     return <div id='products-page'>
-        <h1>Products</h1>
+        <div id='products-header'>
+          
+            <h1>Products</h1>
+            <div><button>Add Item</button></div>
+        </div>
         <div id='show-items'>
 
         {state.map((e)=>{
-            return <ProductCard key={e.id} image={e.avatar} title={e.name} price={e.price}    />
+            return <ProductCard key={e.id} image={e.avatar} title={e.name} price={e.price} detailPage={`./Shoes/${e.id}`} pass={e}    />
         })}
         </div>
         </div>

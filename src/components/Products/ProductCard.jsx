@@ -11,6 +11,6 @@ export default function ProductCard(props){
     <img src={props.image} alt="" id='product-img'/>
     <p>{props.title}</p>
     <p><span>&#8362;</span> {props.price}</p>
-    <Link to={(`/${props.title}`) }>Manage Items</Link>
+    <Link to={(`/${props.detailPage}`) } state={props.pass} >Manage Items</Link>
 </div>
 }
