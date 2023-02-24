@@ -1,7 +1,9 @@
 import './Products.css'
 import {useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ProductCard from './ProductCard';
+import AddItemForm from '../AddItem/AddItem';
 
 
 const url = "https://63f749eae40e087c958b57f1.mockapi.io/shoestore";
@@ -10,6 +12,7 @@ export default function ProductsPage(props){
     const [shoesitemsFromDb, setShoesItemsFromDb] = useState([]);
     const [isLoading, setIsLoadind]=useState(false);
     const location = useLocation();
+    const navigate = useNavigate();
     const state = location.state;
     console.log("PRODUCT data: ",shoesitemsFromDb);
     console.log("STATE", state);
@@ -52,7 +55,7 @@ export default function ProductsPage(props){
         <div id='products-header'>
           
             <h1>{state} Products</h1>
-            <div><button>Add Item</button></div>
+            <div><button onClick={()=>{navigate('/shoes/AddItem')}} >Add Item</button></div>
         </div>
         <div id='show-items'>
 

@@ -6,6 +6,7 @@ import Home from "./components/HomePage/Home";
 import ProductsPage from "./components/Products/Products";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
 import "./App.css";
+import AddItemForm from "./components/AddItem/AddItem";
 
 
 const route = createBrowserRouter([
@@ -19,11 +20,15 @@ const route = createBrowserRouter([
       },
       {
         path:"Shoes",
-        element: <ProductsPage/>
+        element: <ProductsPage/>,
       },
       {
         path:'Shoes/:id',
         element:<ProductDetail/>
+      },
+      {
+        path:'Shoes/AddItem',
+        element:<AddItemForm/>
       }
     ],
   },

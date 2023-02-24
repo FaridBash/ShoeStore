@@ -1,0 +1,55 @@
+
+*{
+    box-sizing: border-box;
+}
+
+
+#add-item-container{
+    width: 20rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 15px;
+    background:#858484;
+    padding: 1rem;
+    padding-bottom: 3rem;
+    margin: 2rem;
+}
+
+.input-form{
+    width: 80%;
+    height: 4%;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    padding: 10px;
+}
+
+
+#num-input-container{
+    width: 80%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+}
+
+.input-num{
+    width: 40%;
+    height: 40%;
+    margin: 1rem;
+    margin-left: 0.1rem;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    padding: 10px;
+}
+
+.input-Desc{
+    width: 80%;
+    /* height: 30%; */
+    border-radius: 10px;
+    border: 1px solid transparent;
+    padding: 10px;
+}
