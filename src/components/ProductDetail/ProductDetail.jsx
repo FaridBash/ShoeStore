@@ -5,10 +5,10 @@ import { url } from '../HomePage/Home';
 import { useNavigate } from "react-router-dom";
 export default function ProductDetail(props){
     const params=useParams();
-    const location = useLocation();
     const navigate = useNavigate();
+    const location = useLocation();
     const state = location.state;
-    console.log(state);
+    console.log("state---",state);
     console.log("PARAMS: ", params.id);
 
     async function deleteHandler(itemId){
@@ -26,13 +26,48 @@ export default function ProductDetail(props){
             
         }
         }
+
+
+    async function updateHandler(itemId, name, price, image){
+        try {
+            fetch(`${url}/${itemId}`, {
+            method: 'PATCH',
+            body: JSON.stringify({
+                name: name,
+                price: price,
+                image: image,
+              }),
+              headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+              },
+            })
+        .then(res => res.json())
+        .then(data => console.log("res",data))
+        console.log("EDIT obj:", data);
+        } catch (error) {
+            
+        }
+        }
+
+
+//         fetch('https://jsonplaceholder.typicode.com/posts/1', {
+//   method: 'PATCH',
+//   body: JSON.stringify({
+//     title: 'foo',
+//   }),
+//   headers: {
+//     'Content-type': 'application/json; charset=UTF-8',
+//   },
+// })
+//   .then((response) => response.json())
+//   .then((json) => console.log(json));
     
 
     return <div id='detail-container'>
                 <h1>Product Detail</h1>
             <div id='del-edit-btns'>
                 <button onClick={()=>{deleteHandler(params.id); navigate(-1)}}>Remove Item</button>
-                <button>Edit Item</button>
+                <button onClick={()=>{navigate('/shoes/AddItem', {state})}}>Edit Item</button>
             </div>
             <h2>{state.name}</h2>
             <img src={state.avatar} alt="" id='detail-img'/>

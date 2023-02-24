@@ -55,15 +55,17 @@ export default function ProductsPage(props){
         <div id='products-header'>
           
             <h1>{state} Products</h1>
-            <div><button onClick={()=>{navigate('/shoes/AddItem')}} >Add Item</button></div>
         </div>
+            <div id='add-btn' >
+              <button onClick={()=>{navigate('/shoes/AddItem')}} >Add Item</button>
+              </div>
         <div id='show-items'>
 
         {!isLoading && shoesitemsFromDb.map((e)=>{
             return <ProductCard key={e.id} image={e.avatar} title={e.name} price={e.price} detailPage={`./Shoes/${e.id}`} pass={e}   id={e.id}  />
         })}
 
-        {isLoading && <h1>Loading...</h1>}
+        {isLoading && <div id='spinner'> <div className="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div> </div>}
         </div>
         </div>
 }
