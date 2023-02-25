@@ -19,6 +19,8 @@
 
 #header{
     width: 100%;
+    height: 12%;
+    /* margin-bottom: 1rem; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -31,7 +33,9 @@ background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, F
 
 #header h2{
     padding-left: 4rem;
+    font-size: 30px;
     font-family: 'Norican', cursive;
+    margin: 0.5rem;
 }
 
 #header span{
@@ -65,10 +69,11 @@ background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, F
 @media only screen and (max-width: 600px){
     #main-container{
         display: flex;
+        flex-direction: column;
     }
     #header{
-        width: 20%;
-        height: 100%;
+        width: 100%;
+        /* height: 50%; */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -81,20 +86,24 @@ background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, F
     #header h2{
         padding: 0;
         margin-left: 0;
+        margin-bottom: 0;
     }
 
     #myMenu{
-        flex-direction: column;
+        /* flex-direction: column; */
         font-size: 12px;
     }
 
     #outlet{
-        width: 80%;
+        width: 100%;
+        height: 100%;
+        margin-top: 6rem;
         display: flex;
         flex-direction: row;
         align-items: center;
-        position: absolute;
-        right: 0;
+       padding-top: 1rem;
+       /* position: fixed; */
+       padding-bottom: 2rem;
 
     }
 
