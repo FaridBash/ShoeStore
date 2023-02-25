@@ -21,12 +21,17 @@ export default function AddItemForm(){
     },[newItemObj])
 
     useEffect(()=>{
-        if(state){
-            setTimeout(() => {
-                updateHandler(editedObj.id, editedObj);
-                navigate(-1);
-            }, 1000);
-        }
+        console.log("clg editedObj:", editedObj);
+        if(state && (editedObj != null)){
+                setTimeout(() => {
+            updateHandler(state.id, editedObj.name, editedObj.price, editedObj.avatar);
+        }, 1000);
+                setTimeout(() => {
+                refresh();
+           
+        }, 1000);
+        navigate(-1);
+    }
     },[editedObj])
 
     let inputProductName=useRef(null);
@@ -52,15 +57,15 @@ export default function AddItemForm(){
         }
     }
     
-    async function updateHandler(itemId, obj){
+    async function updateHandler(itemId, name, price, image){
         try {
             fetch(`${url}/${itemId}`, {
             method: 'PUT',
             body: JSON.stringify({
                 
-                name: obj.name,
-                price: obj.price,
-                avatar: obj.avatar,
+                name: name,
+                price: price,
+                avatar: image,
               }),
               headers: {
                 'Content-type': 'application/json; charset=UTF-8',
@@ -73,7 +78,18 @@ export default function AddItemForm(){
             
         }
         }
-    
+        async function refresh(){
+            try {
+                fetch(`${url}`)
+            .then(res => res.json())
+            .then(data => console.log("res refresh",data))
+            console.log('refreshed');
+            } catch (error) {
+                
+            }
+            }
+        
+
     function submitButtonHandler(name, id, price, avatar){
         const myObj={}
         myObj.name=name.current.value;
@@ -93,7 +109,7 @@ export default function AddItemForm(){
         const myObj={}
         myObj.name=name.current.value;
         myObj.price=price.current.value;
-        myObj.id=id.current.value;
+        myObj.id=state.id;
         myObj.avatar=avatar.current.value;
         setEditedObj(myObj);
         inputProductName=null;
@@ -139,7 +155,8 @@ export default function AddItemForm(){
         <input type="text" className='input-Desc' placeholder='Item Img Link' ref={inputProductAvatar} />
         <button onClick={()=>{
             // updateHandler(state.id, inputProductName.current.value, inputProductPrice.current.value, inputProductAvatar.current.value);
-            editButtonHandler(inputProductName, inputProductId ,inputProductPrice, inputProductAvatar)
+            editButtonHandler(inputProductName, state.id ,inputProductPrice, inputProductAvatar);
+            
             
         }
             }>Submit Edit</button>
