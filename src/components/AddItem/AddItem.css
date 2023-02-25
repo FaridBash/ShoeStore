@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Cousine:ital@1&display=swap');
 *{
     box-sizing: border-box;
 }
@@ -16,6 +16,12 @@
     padding: 1rem;
     padding-bottom: 3rem;
     margin: 2rem;
+    font-family: 'Cousine', monospace;
+    background: #3E5151;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #DECBA4, #3E5151);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        color: #fff;
+    position: fixed;
 }
 
 .input-form{
@@ -52,4 +58,20 @@
     border-radius: 10px;
     border: 1px solid transparent;
     padding: 10px;
+}
+.input-form, .input-num, .input-Desc{
+    height: 3rem;
+}
+
+@media only screen and (max-width: 600px){
+    #add-item-container{
+        width: 90%;
+        margin: auto;
+        margin-top: 20%;
+        
+    }
+
+    #num-input-container{
+        height: 3rem;
+    }
 }

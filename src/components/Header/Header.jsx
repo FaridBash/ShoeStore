@@ -6,7 +6,7 @@ export default function Header(){
 
 
 
-    return <>
+    return <div id='main-container'>
     <div id="header">
         <h2><span>My</span>Store</h2>
         <ul id='myMenu'>
@@ -18,5 +18,5 @@ export default function Header(){
     <div id='outlet'>
     <Outlet/>
     </div>
-    </>
+    </div>
 }

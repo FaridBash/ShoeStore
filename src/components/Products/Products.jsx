@@ -39,11 +39,6 @@ export default function ProductsPage(props){
             console.log(data);
             setIsLoadind(false);
           });
-  
-        // const fetched= await fetch(url);
-        // const data= await fetched.json();
-        // setShoesItemsFromDb(data);
-        // console.log(shoesitemsFromDb);
       } catch (error) {console.log("Couldn't fetch");}
     }
 

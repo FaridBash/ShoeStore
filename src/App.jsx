@@ -7,6 +7,7 @@ import ProductsPage from "./components/Products/Products";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
 import "./App.css";
 import AddItemForm from "./components/AddItem/AddItem";
+import NoPath from "./components/NoPath";
 
 
 const route = createBrowserRouter([
@@ -29,13 +30,14 @@ const route = createBrowserRouter([
       {
         path:'Shoes/AddItem',
         element:<AddItemForm/>
+      },
+      {
+        path:'*',
+        element:<NoPath/>
       }
     ],
   },
-  // {
-  //   path:'/home1',
-  //   element: <Home/>
-  // }
+ 
 ]);
 
 function App() {
