@@ -99,7 +99,7 @@ background: linear-gradient(to right, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, F
 
     #outlet{
         width: 100%;
-        height: 100%;
+        height: 100vh;
         margin-top: 5rem;
         display: flex;
         flex-direction: row;

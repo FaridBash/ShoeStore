@@ -41,6 +41,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 2rem;
     
     
 }
@@ -137,10 +138,22 @@
     }
 
     #add-btn{
+
         position: static;
         width: 100%;
+        
     }
     #add-btn button{
         width: 70%;
+        
+    }
+
+    #products-header{
+      height: 7rem;
+      /* position: fixed; */
+    }
+
+    #products-page{
+      height: 100vh;
     }
   }
